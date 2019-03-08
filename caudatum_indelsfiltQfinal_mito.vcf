@@ -1,0 +1,48 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##samtoolsVersion=1.5+htslib-1.5
+##samtoolsCommand=samtools mpileup -q 30 -Q 20 -t DP -uvf caudatum_assembly.fasta BAM_RMDUP/Sample_C147.bam BAM_RMDUP/Sample_C119.bam BAM_RMDUP/Sample_C104.bam BAM_RMDUP/Sample_C065.bam BAM_RMDUP/Sample_C083.bam BAM_RMDUP/Sample_C131.bam
+##reference=file://caudatum_assembly.fasta
+##contig=<ID=NODE_265_length_44481_cov_45.5432_ID_529,length=44481>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPB,Number=1,Type=Float,Description="Mann-Whitney U test of Read Position Bias (bigger is better)">
+##INFO=<ID=MQB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality Bias (bigger is better)">
+##INFO=<ID=BQB,Number=1,Type=Float,Description="Mann-Whitney U test of Base Quality Bias (bigger is better)">
+##INFO=<ID=MQSB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality vs Strand Bias (bigger is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric.">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Number of high-quality bases">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Phred-scaled Genotype Quality">
+##INFO=<ID=ICB,Number=1,Type=Float,Description="Inbreeding Coefficient Binomial test (bigger is better)">
+##INFO=<ID=HOB,Number=1,Type=Float,Description="Bias in the number of HOMs number (smaller is better)">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.5+htslib-1.5
+##bcftools_callCommand=call -f GQ -o POPN_MULTI/caudatum_indels.vcf -O v -V snps -mv POPN_MULTI/caudatum.vcf; Date=Thu Jan 17 02:53:54 2019
+##bcftools_viewVersion=1.5+htslib-1.5
+##bcftools_viewCommand=view -q 0.001 -o caudatum_indelsfiltQfinal.vcf caudatum_indelsfiltQ.recode.vcf; Date=Thu Jan 17 03:08:49 2019
+#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  BAM_RMDUP/Sample_C147.bam       BAM_RMDUP/Sample_C119.bam       BAM_RMDUP/Sample_C104.bam       BAM_RMDUP/Sample_C065.bam       BAM_RMDUP/Sample_C083.bam       BAM_RMDUP/Sample_C131.bam
+NODE_265_length_44481_cov_45.5432_ID_529	66	.	AATATATATATATATA	AATATATATATATATATA	160	.	INDEL;IDV=8;IMF=0.888889;DP=35;VDB=3.33168e-12;SGB=5.01198;MQSB=1;MQ0F=0;ICB=0.128205;HOB=0.0555556;AC=1;AN=6;DP4=23,1,8,0;MQ=60	GT:PL:DP:GQ	./.:0,0,0:0:0	./.:0,15,175:5:16	./.:0,2,196:19:4	./.:209,16,38:8:28	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	1251	.	TAATATAAAAAAAAAAATATAAAAAAAA	TAATATAAAAAAAAAAATATAAAAAAAAAAATATAAAAAAAA,TAATATAAAAAAAAAATATAAAAAAAAAAATATAAAAAAAA	185	.	INDEL;IDV=3;IMF=0.3;DP=110;VDB=0.0157702;SGB=2.67374;MQSB=1;MQ0F=0;ICB=1;HOB=0.111111;AC=1,1;AN=6;DP4=41,32,5,4;MQ=60	GT:PL:DP:GQ	./.:0,0,0,0,0,0:0:0	1/2:255,114,96,241,0,235:8:94	0/0:0,184,255,163,255,255:62:99	0/0:0,36,255,36,255,255:12:35	./.:0,0,0,0,0,0:0:0	./.:0,0,0,0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	1701	.	ATTTTTTTTTTT	ATTTTTTTTTT	38.6375	.	INDEL;IDV=30;IMF=1;DP=178;VDB=0.0518384;SGB=-12.4056;MQSB=0.864025;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=2;AN=6;DP4=59,40,13,17;MQ=59	GT:PL:DP:GQ	./.:0,0,0:0:0	0/0:0,36,60:17:35	0/0:0,237,65:88:70	1/1:80,69,0:24:62	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	2658	.	TTAT	TT	115	.	INDEL;IDV=8;IMF=0.210526;DP=159;VDB=0.0376037;SGB=8.01111;MQSB=1;MQ0F=0;ICB=0.416667;HOB=0.375;AC=2;AN=8;DP4=52,36,4,2;MQ=60	GT:PL:DP:GQ	./.:159,18,0:6:10	0/0:0,54,255:18:55	0/0:0,190,255:63:99	./.:0,21,179:7:22	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	2895	.	AATTTTATTTTATTTTATTTTATTTTATTTTATTTT	AATTTTATTTTATTTTATTTTATTTT	40.7084	.	INDEL;IDV=2;IMF=0.0769231;DP=170;VDB=0.000104416;SGB=0.981224;MQSB=1;MQ0F=0;ICB=0.07;HOB=0.03125;AC=1;AN=8;DP4=32,26,1,1;MQ=60	GT:PL:DP:GQ	./.:0,9,121:3:20	0/1:78,0,255:14:66	0/0:0,117,255:39:99	./.:0,12,220:4:23	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	4778	.	ATTTTTTTTT	ATTTTTTTT	29.6306	.	INDEL;IDV=23;IMF=0.793103;DP=201;VDB=0.301467;SGB=9.79813;MQSB=0.979172;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=2;AN=6;DP4=63,57,12,6;MQ=59	GT:PL:DP:GQ	./.:0,0,0:0:0	1/1:71,41,0:18:34	0/0:0,255,101:86:99	0/0:0,102,93:34:97	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	8368	.	CAAAAAAAAAA	CAAAAAAAAAAA	47.5624	.	INDEL;IDV=62;IMF=0.805195;DP=256;VDB=0.323362;SGB=32.5119;MQSB=1;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=2;AN=6;DP4=56,62,31,27;MQ=60	GT:PL:DP:GQ	./.:0,0,0:0:0	0/0:0,115,89:53:93	0/0:0,166,81:74:85	1/1:89,148,0:49:84	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	8927	.	CTTTTTTTT	CTTTTTTTTT	40.6092	.	INDEL;IDV=47;IMF=0.839286;DP=208;VDB=0.314933;SGB=59.9627;MQSB=0.99527;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=2;AN=6;DP4=77,39,25,10;MQ=59	GT:PL:DP:GQ	./.:0,0,0:0:0	1/1:82,82,0:37:72	0/0:0,247,95:82:99	0/0:0,96,100:32:95	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	11442	.	TCTTTATCAACAGAAGATCCTTTATCAACAGAAGAGCCTTTATCAACA	TCTTTATCAACAGAAGAGCCTTTATCAACA	218	.	INDEL;IDV=8;IMF=0.5;DP=108;VDB=2.33278e-09;SGB=21.9102;MQSB=0.496357;MQ0F=0;ICB=0.5;HOB=0.5;AC=2;AN=4;DP4=31,15,11,4;MQ=56	GT:PL:DP:GQ	./.:0,0,0:0:0	1/1:255,45,0:15:41	0/0:0,138,255:46:99	./.:0,0,0:0:0	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	22969	.	ATTTTTT	ATTTTT	94	.	INDEL;IDV=36;IMF=1;DP=172;VDB=0.421236;SGB=17.7156;MQSB=0.989565;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=2;AN=6;DP4=51,63,20,8;MQ=59	GT:PL:DP:GQ	./.:0,0,0:0:0	1/1:135,81,0:27:75	0/0:0,255,181:94:99	0/0:0,63,157:21:62	./.:0,0,0:0:0	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	28157	.	GTTTTTTTTTTTT	GTTTTTTTTTT,GTTTTTTTTTTTTT	146	.	INDEL;IDV=59;IMF=0.728395;DP=276;VDB=0.0169986;SGB=84.1687;MQSB=1;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=2,2;AN=6;DP4=50,31,60,49;MQ=60	GT:PL:DP:GQ	./.:0,0,0,0,0,0:0:0	2/2:50,53,50,142,157,0:58:43	0/0:0,241,56,225,59,56:81:52	1/1:174,154,0,174,154,174:51:99	./.:0,0,0,0,0,0:0:0	./.:0,0,0,0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	34327	.	TA	T	44.0671	.	INDEL;IDV=8;IMF=0.25;DP=382;VDB=0.87833;SGB=2.6895;MQSB=1;MQ0F=0;ICB=0.0300546;HOB=0.0138889;AC=1;AN=12;DP4=153,91,3,0;MQ=60	GT:PL:DP:GQ	0/0:0,144,255:48:99	0/0:0,229,255:76:99	0/0:0,229,255:76:99	0/0:0,129,255:43:99	./.:0,3,21:1:7	./.:88,9,0:3:3
+NODE_265_length_44481_cov_45.5432_ID_529	37805	.	ATTTTTTT	ATTTTTTTT	165	.	INDEL;IDV=31;IMF=0.837838;DP=164;VDB=0.94369;SGB=38.848;MQSB=1;MQ0F=0;ICB=0.117361;HOB=0.48;AC=4;AN=10;DP4=40,28,23,16;MQ=60	GT:PL:DP:GQ	1/1:126,78,0:26:72	0/0:0,33,87:11:32	0/0:0,154,130:51:99	./.:0,15,59:5:14	./.:93,27,0:14:21	./.:0,0,0:0:0
+NODE_265_length_44481_cov_45.5432_ID_529	41002	.	ATTTTTTTTTTTT	ATTTTTTTTTTTTT	80	.	INDEL;IDV=67;IMF=0.881579;DP=298;VDB=0.866176;SGB=30.741;MQSB=0.999989;MQ0F=0;ICB=0.104167;HOB=0.444444;AC=4;AN=12;DP4=65,55,38,47;MQ=59	GT:PL:DP:GQ	1/1:74,136,0:52:67	0/0:0,126,53:43:59	0/0:0,160,65:61:71	1/1:64,78,0:31:57	0/0:0,36,60:12:36	./.:0,18,39:6:18
+NODE_265_length_44481_cov_45.5432_ID_529	44312	.	AAATTTTTTTTATAAATAATTTTTTTTATAAATAATTTTTTTTATAAATAATTTTTTT	AAATTTTTTTTATAAATAATTTTTTT	469	.	INDEL;IDV=14;IMF=0.777778;DP=154;VDB=4.25962e-05;SGB=22.3569;MQSB=0.919661;MQ0F=0;ICB=0.416667;HOB=0.444444;AC=4;AN=6;DP4=39,17,18,6;MQ=58	GT:PL:DP:GQ	./.:0,0,0:0:0	1/1:255,30,0:10:30	0/0:0,169,255:56:99	1/1:255,42,0:14:42	./.:0,0,0:0:0	./.:0,0,0:0:0
